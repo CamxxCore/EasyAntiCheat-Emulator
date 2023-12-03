@@ -12,8 +12,28 @@
 // add headers that you want to pre-compile here
 #include "framework.h"
 
+#include <cstdio>
+
 #include "Types.h"
 
-extern "C" DLL_EXPORT PVOID CreateGameClient(const char* interfaceName);
+#include "VaText.h"
+
+#include "Logger.h"
+
+using namespace Utility;
+
+#ifdef EOS_VER
+#define EOS_BUILD_DLL 1
+
+#include "eos_init.h"
+#include "eos_types.h"
+#include "eos_anticheatclient_types.h"
+
+extern "C" DLL_EXPORT EOS_HAntiCheatClient EOS_Platform_GetAntiCheatClientInterface( EOS_HPlatform Handle );
+#else
+extern "C" DLL_EXPORT PVOID CreateGameClient( const char* interfaceName );
+
+extern "C" DLL_EXPORT PVOID CreateClientAuth(const char* interfaceName);
+#endif
 
 #endif //PCH_H

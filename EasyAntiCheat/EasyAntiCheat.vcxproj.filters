@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\EOS">
+      <UniqueIdentifier>{f245f718-730b-4136-a927-70b4ce35732c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -23,6 +26,33 @@
     </ClInclude>
     <ClInclude Include="Types.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VaText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_types.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_common.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_base.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_result.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_anticheatclient_types.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_anticheatcommon_types.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_init.h">
+      <Filter>Source Files\EOS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -35,5 +65,16 @@
     <ClCompile Include="Types.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VaText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="eos_anticheatclient_types_deprecated.inl">
+      <Filter>Source Files\EOS</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -5,43 +5,78 @@
    the type library 'GameHunt'
 */
 
-/* 15204 */
-class IGameClientBase
+enum ClientIntegrityViolationType : __int32
 {
+    IntegrityViolationNone = 0x0,
+    EACHashCatalogueFileNotFound = 0x1,
+    EACHashCatalogueError = 0x2,
+    EACHashCatalogueCertificateRevoked = 0x3,
+    UnknownGameFileVersion = 0x4,
+    RequiredGameFileNotFound = 0x5,
+    UncataloguedGameFileForbidden = 0x6,
+    UnknownSystemFileVersion = 0x7,
+    ForbiddenModuleLoaded = 0x8,
+    CorruptedMemory = 0x9,
+    HackToolDetected = 0xA,
+    InternalAntiCheatViolation = 0xB,
+    CorruptedNetworkMessageFlow = 0xC,
+    CannotRunUnderVirtualMachine = 0xD,
+    ForbiddenSystemConfiguration = 0xE,
+};
+
+enum ServerHostValidationResult : __int32
+{
+    ServerHostValidationSuccess = 0x0,
+    ServerHostValidationFailed = 0x1,
+    ServerHostValidationTimedOut = 0x2,
+    ServerHostAccountStatusOk = 0x3,
+    ServerHostAccountStatusBanned = 0x4,
+};
+
+/* 15204 */
+class IGameClientBase {
+  public:
+    virtual void Initialize( void* a1, void* a2, void* a3 ); // 0x0-0x8
+    virtual void Destroy(); // 0x8-0x10
+    virtual void ConnectionReset(); // 0x10-0x18
+    virtual bool PopNetworkMessage( char** data, unsigned int* len ); // 0x18-0x20
+    virtual void PushNetworkMessage(char* data, const unsigned int len); // 0x20-0x28
+    virtual void PollStatus(bool(__fastcall* OnIntegrityViolation)(const ClientIntegrityViolationType, const char*, const char*, void*), bool(__fastcall* OnServerHostValidate)(const ServerHostValidationResult, const char*, void*)); // 0x28-0x30
+    virtual void xyz(); // 0x30-0x38
+    virtual void xxz(); // 0x38-0x40
+    virtual void yxx(); // 0x40-0x48
+    virtual void yxz(); // 0x48-0x50
+    virtual bool InitLocalization( const char* a1, const char* a2 ); // 0x50-0x58
+};
+
+
+/* 15204 */
+class IClientAuth {
 public:
-	virtual void Initialize(void* a1, void* a2, void* a3); // 0x0-0x8
-	virtual void Destroy(); // 0x8-0x10
-	virtual void zxy(); // 0x10-0x18
-	virtual bool GetMessageData(char** data, unsigned int* len); // 0x18-0x20
-	virtual void zzx(); // 0x20-0x28
-	virtual void OnIntegrityViolation(void * a1, __int64 a2, void* a3); // 0x28-0x30
-	virtual void xyz(); // 0x30-0x38
-	virtual void xxz(); // 0x38-0x40
-	virtual void yxx(); // 0x40-0x48
-	virtual void yxz(); // 0x48-0x50
-	virtual void xzy(void* a1, void* a2); // 0x50-0x58
+    virtual void xyz(); // 0x0-0x8
+    virtual void Destroy(); // 0x8-0x10
+    virtual void zxy(); // 0x10-0x18
+    virtual bool GetAuthTicket(void * authInfo, char * szAuthTicketBuffer); // 0x18-0x20
 };
 
 /* 749 */
-enum InitProgressResult
-{
-	InitContinue = 0x0,
-	InitCancel = 0x1,
+enum InitProgressResult {
+    InitContinue = 0x0,
+    InitCancel = 0x1,
 };
 
 /* 750 */
-enum EACAsyncResult
-{
-	InitSuccess = 0x0,
-	LauncherInvalidParameter = 0x1,
-	LauncherDNSError = 0x2,
-	LauncherNetworkError = 0x3,
-	LauncherFailure = 0x4,
-	LauncherInstallError = 0x5,
-	LauncherSuccessUnderWine = 0x6,
-	InitCancelRequested = 0x7,
-	GameClientConnected = 0x8,
-	GameClientDisconnected = 0x9,
-	GameClientAuthenticated = 0xA,
-	GameClientIntegrityViolation = 0xB,
+enum EACAsyncResult {
+    InitSuccess = 0x0,
+    LauncherInvalidParameter = 0x1,
+    LauncherDNSError = 0x2,
+    LauncherNetworkError = 0x3,
+    LauncherFailure = 0x4,
+    LauncherInstallError = 0x5,
+    LauncherSuccessUnderWine = 0x6,
+    InitCancelRequested = 0x7,
+    GameClientConnected = 0x8,
+    GameClientDisconnected = 0x9,
+    GameClientAuthenticated = 0xA,
+    GameClientIntegrityViolation = 0xB,
 };

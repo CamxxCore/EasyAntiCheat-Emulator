@@ -14,6 +14,20 @@ EOS_DECLARE_FUNC( EOS_EResult ) EOS_Initialize( const EOS_InitializeOptions * Op
     return EOS_EResult::EOS_Success;
 }
 
+EOS_DECLARE_FUNC( EOS_EResult ) EOS_Logging_SetCallback( EOS_LogMessageFunc Callback ) {
+
+    LOG( "Setting Log Callback..." );
+
+    return EOS_EResult::EOS_Success;
+}
+
+EOS_DECLARE_FUNC( EOS_EResult ) EOS_Logging_SetLogLevel( EOS_ELogCategory LogCategory, int32_t LogLevel )
+{
+    LOG( "Setting Log Level: %i", LogLevel );
+
+    return EOS_EResult::EOS_Success;
+}
+
 EOS_DECLARE_FUNC( EOS_EResult ) EOS_Shutdown()
 {
     LOG( "Shutting down EOS..." );

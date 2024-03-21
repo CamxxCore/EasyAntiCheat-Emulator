@@ -13,9 +13,7 @@ namespace Utility {
 		vsprintf_s( inBuf, format, va );
 		va_end( va );
 
-		//auto str = va( "[LOG] %s\n", inBuf );
-
-		OutputDebugStringA( inBuf );
+		OutputDebugStringA( va( "[EAC Emulated] %s\n", inBuf ) );
 	}
 
 	Logger::~Logger() {

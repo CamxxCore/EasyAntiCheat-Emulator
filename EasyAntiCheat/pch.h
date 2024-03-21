@@ -28,6 +28,7 @@ using namespace Utility;
 #include "eos_init.h"
 #include "eos_types.h"
 #include "eos_anticheatclient_types.h"
+#include "eos_logging.h"
 
 extern "C" DLL_EXPORT EOS_HAntiCheatClient EOS_Platform_GetAntiCheatClientInterface( EOS_HPlatform Handle );
 #else

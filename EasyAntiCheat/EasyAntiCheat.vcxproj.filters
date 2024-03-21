@@ -39,9 +39,6 @@
     <ClInclude Include="eos_base.h">
       <Filter>Source Files\EOS</Filter>
     </ClInclude>
-    <ClInclude Include="eos_result.h">
-      <Filter>Source Files\EOS</Filter>
-    </ClInclude>
     <ClInclude Include="eos_anticheatclient_types.h">
       <Filter>Source Files\EOS</Filter>
     </ClInclude>
@@ -52,6 +49,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="eos_init.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_logging.h">
       <Filter>Source Files\EOS</Filter>
     </ClInclude>
   </ItemGroup>

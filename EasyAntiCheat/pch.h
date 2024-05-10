@@ -14,6 +14,8 @@
 
 #include <cstdio>
 
+#include <random>
+
 #include "Types.h"
 
 #include "VaText.h"
@@ -27,6 +29,7 @@ using namespace Utility;
 
 #include "eos_init.h"
 #include "eos_types.h"
+#include "eos_connect.h"
 #include "eos_anticheatclient_types.h"
 #include "eos_logging.h"
 

@@ -54,6 +54,12 @@
     <ClInclude Include="eos_logging.h">
       <Filter>Source Files\EOS</Filter>
     </ClInclude>
+    <ClInclude Include="eos_connect_types.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
+    <ClInclude Include="eos_connect.h">
+      <Filter>Source Files\EOS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

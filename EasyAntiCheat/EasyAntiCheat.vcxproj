@@ -235,6 +235,8 @@
     <ClInclude Include="eos_anticheatcommon_types.h" />
     <ClInclude Include="eos_base.h" />
     <ClInclude Include="eos_common.h" />
+    <ClInclude Include="eos_connect.h" />
+    <ClInclude Include="eos_connect_types.h" />
     <ClInclude Include="eos_init.h" />
     <ClInclude Include="eos_logging.h" />
     <ClInclude Include="eos_types.h" />
